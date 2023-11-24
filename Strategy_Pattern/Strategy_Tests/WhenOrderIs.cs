@@ -19,7 +19,7 @@ namespace Strategy_Tests
         }
 
         [Test]
-        public void FromSwedenToUSLA_AndPrice100_ThenTaxShouldBe95 ()
+        public void FromSwedenToUSLA_AndPrice100_ThenTaxShouldBe9_5 ()
         {
             var order = GetOrder("us", "us", 100m, "la");
             var usLaTax = order.GetTax();
@@ -28,7 +28,7 @@ namespace Strategy_Tests
         }
 
         [Test]
-        public void FromSwedenToUSNY_AndPrice100_ThenTaxShouldBeY()
+        public void FromSwedenToUSNY_AndPrice100_ThenTaxShouldBe4()
         {
             var order = GetOrder("us", "us", 100m, "ny");
             var usLaTax = order.GetTax();
@@ -37,7 +37,7 @@ namespace Strategy_Tests
         }
 
         [Test]
-        public void FromSwedenToUSNYC_AndPrice100_ThenTaxShouldBeY()
+        public void FromSwedenToUSNYC_AndPrice100_ThenTaxShouldBe4_5()
         {
             var order = GetOrder("us", "us", 100m, "nyc");
             var usLaTax = order.GetTax();
