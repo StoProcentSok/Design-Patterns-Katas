@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Strategy_Pattern_First_Look.Business.Strategies
 {
-    internal interface IOrderTaxStrategy
+    public interface IOrderTaxStrategy
     {
         public decimal GetTax(Order order);
     }

@@ -47,15 +47,7 @@ namespace Strategy_Tests
 
         private Order GetOrder(string originCountry, string destCountry, decimal price, string destState = "")
         {
-            var order = new Order()
-            {
-                ShippingDetails = new ShippingDetails
-                {
-                    OriginCountry = originCountry,
-                    DestinationCountry = destCountry,
-                    DestinationState = destState
-                }
-            };
+            var order = new Order(originCountry, destCountry, destState);
 
             order.LineItems.Add(new Item("1", "Item 1", price, ItemType.Hardware), 1);
 
