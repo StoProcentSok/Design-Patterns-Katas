@@ -1,25 +1,65 @@
 ﻿using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Strategy_Pattern_First_Look.Business.Models;
 
 namespace Strategy_Tests
 {
     [TestFixture]
     public class WhenOrderIs
     {
+        
+        
+
         [Test]
-        public void FromSwedenThenTaxSHouldBeX()
+        public void FromSwedenToSweden_AndPrice100_ThenTaxShouldBe_25()
         {
-            Assert.True(true);
+            var order = GetOrder("Sweden", "Sweden", 100m);
+
+            var swedishTax = order.GetTax();
+            Assert.AreEqual(swedishTax, 25m);
         }
 
         [Test]
-        public void FromUSThenTaxSHouldBeY()
+        public void FromSwedenToUSLA_AndPrice100_ThenTaxShouldBe95 ()
         {
-            Assert.False(true);
+            var order = GetOrder("us", "us", 100m, "la");
+            var usLaTax = order.GetTax();
+
+            Assert.AreEqual(usLaTax, 9.5m);
+        }
+
+        [Test]
+        public void FromSwedenToUSNY_AndPrice100_ThenTaxShouldBeY()
+        {
+            var order = GetOrder("us", "us", 100m, "ny");
+            var usLaTax = order.GetTax();
+
+            Assert.AreEqual(usLaTax, 4m);
+        }
+
+        [Test]
+        public void FromSwedenToUSNYC_AndPrice100_ThenTaxShouldBeY()
+        {
+            var order = GetOrder("us", "us", 100m, "nyc");
+            var usLaTax = order.GetTax();
+
+            Assert.AreEqual(usLaTax, 4.5m);
+        }
+
+        private Order GetOrder(string originCountry, string destCountry, decimal price, string destState = "")
+        {
+            var order = new Order()
+            {
+                ShippingDetails = new ShippingDetails
+                {
+                    OriginCountry = originCountry,
+                    DestinationCountry = destCountry,
+                    DestinationState = destState
+                }
+            };
+
+            order.LineItems.Add(new Item("1", "Item 1", price, ItemType.Hardware), 1);
+
+            return order;
         }
     }
 }
