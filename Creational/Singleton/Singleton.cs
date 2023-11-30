@@ -12,7 +12,7 @@ namespace Singleton
 
         private Singleton()
         {
-            Logger.Log("Singleton constructor called");
+            Logger.Log(SingletonLoggerEntries.SingletonConstructorCalledEntry);
         }
 
 
@@ -26,9 +26,15 @@ namespace Singleton
                     singletonInstance = new Singleton();
                 }
 
-                Logger.Log("Singleton returned");
+                Logger.Log(SingletonLoggerEntries.SingletonInstanceReturnedEntry);
                 return singletonInstance;
             }
         }
+    }
+
+    public static class SingletonLoggerEntries
+    {
+        public static string SingletonConstructorCalledEntry = "Singleton constructor called";
+        public static string SingletonInstanceReturnedEntry = "Singleton instance returned";
     }
 }
