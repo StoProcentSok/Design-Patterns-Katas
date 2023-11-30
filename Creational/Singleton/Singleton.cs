@@ -8,7 +8,7 @@ namespace Singleton
 {
     public sealed class Singleton
     {
-        private static Singleton singletonInstance;
+        private static Singleton? singletonInstance;
 
         private Singleton()
         {
@@ -20,11 +20,7 @@ namespace Singleton
         {
             get
             {
-                
-                if (singletonInstance is null)
-                {
-                    singletonInstance = new Singleton();
-                }
+                singletonInstance ??= new Singleton();
 
                 Logger.Log(SingletonLoggerEntries.SingletonInstanceReturnedEntry);
                 return singletonInstance;

@@ -7,8 +7,6 @@ namespace Singleton_Tests
     [TestFixture]
     public class WhenSingletonIsCalled
     {
-
-
         [Test]
         public void ThenInitializationLogEntryIsAdded() 
         {
@@ -41,6 +39,14 @@ namespace Singleton_Tests
     public class WhenSingletonIsNotCalled
     {
         [Test]
+        public void ThenNoEntryAboutInitializationIsPresent()
+        {
+            Logger.Clear();
+            var logs = Logger.GetLog();
+            Assert.IsEmpty(logs);
+        }
+
+        [Test]
         public void ThenSingletonObjectIsNullUntilCalled()
         {
             Type singletonType = typeof(Singleton.Singleton);
@@ -51,14 +57,6 @@ namespace Singleton_Tests
             Assert.NotNull(result);
 
             Assert.True(result is Singleton.Singleton);
-        }
-
-        [Test]
-        public void ThenNoEntryAboutInitializationIsPresent() 
-        {
-            Logger.Clear();
-            var logs = Logger.GetLog();
-            Assert.IsEmpty(logs);
         }
     }
 }
