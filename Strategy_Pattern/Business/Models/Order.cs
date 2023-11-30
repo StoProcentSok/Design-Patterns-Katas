@@ -1,4 +1,5 @@
 ﻿using Strategy_Pattern_First_Look.Business.Strategies;
+using Strategy_Pattern_First_Look.Business.Strategies.SalesTax;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -19,16 +20,16 @@ namespace Strategy_Pattern_First_Look.Business.Models
             var destination = this.ShippingDetails.DestinationCountry.ToLowerInvariant();
             if (destination == "sweden")
             {
-                this.Strategy = new SwedishTaxStrategy();
+                this.SalesTaxStrategy = new SwedishTaxStrategy();
             }
 
             if (destination == "us")
             {
-                this.Strategy = new USTaxStrategy();
+                this.SalesTaxStrategy = new USTaxStrategy();
             }
         }
 
-        public IOrderTaxStrategy Strategy { get; set; }
+        public IOrderTaxStrategy SalesTaxStrategy { get; set; }
         public Dictionary<Item, int> LineItems { get; } = new Dictionary<Item, int>();
 
         public IList<Payment> SelectedPayments { get; } = new List<Payment>();
@@ -45,13 +46,13 @@ namespace Strategy_Pattern_First_Look.Business.Models
 
         public decimal GetTax()
         {
-            if (Strategy is null)
+            if (SalesTaxStrategy is null)
             {
                 return 0m;
             }
             else
             {
-                return Strategy.GetTax(this);
+                return SalesTaxStrategy.GetTax(this);
             }
         }
     }
