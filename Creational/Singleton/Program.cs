@@ -1,6 +1,4 @@
-﻿using Singleton;
-
-namespace Singleton
+﻿namespace Singleton
 {
     internal class Program
     {

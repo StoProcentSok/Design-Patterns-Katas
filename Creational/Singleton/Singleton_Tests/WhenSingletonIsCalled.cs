@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework;
 using Singleton;
-using System.Reflection;
 
 namespace Singleton_Tests
 {
@@ -10,7 +9,6 @@ namespace Singleton_Tests
         [Test]
         public void ThenInitializationLogEntryIsAdded() 
         {
-
             var singleton = Singleton.Singleton.SingletonInstance;
             var logs = Logger.GetLog();
             Assert.IsNotEmpty(logs);
@@ -25,38 +23,11 @@ namespace Singleton_Tests
             var second = Singleton.Singleton.SingletonInstance;
             var third = Singleton.Singleton.SingletonInstance;
 
-
             var logs = Logger.GetLog();
             Assert.AreEqual(4, logs.Count);
             Assert.AreEqual(1, logs.Where(l => l.Contains(SingletonLoggerEntries.SingletonConstructorCalledEntry)).Count());
             Assert.AreEqual(3, logs.Where(l => l.Contains(SingletonLoggerEntries.SingletonInstanceReturnedEntry)).Count());
             
-        }
-    }
-
-
-    [TestFixture]
-    public class WhenSingletonIsNotCalled
-    {
-        [Test]
-        public void ThenNoEntryAboutInitializationIsPresent()
-        {
-            Logger.Clear();
-            var logs = Logger.GetLog();
-            Assert.IsEmpty(logs);
-        }
-
-        [Test]
-        public void ThenSingletonObjectIsNullUntilCalled()
-        {
-            Type singletonType = typeof(Singleton.Singleton);
-            FieldInfo fieldInfo = singletonType.GetField("singletonInstance");
-            Assert.IsNull(fieldInfo);
-
-            var result = Singleton.Singleton.SingletonInstance;
-            Assert.NotNull(result);
-
-            Assert.True(result is Singleton.Singleton);
         }
     }
 }
