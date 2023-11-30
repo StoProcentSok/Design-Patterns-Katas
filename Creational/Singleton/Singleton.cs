@@ -3,6 +3,8 @@
     public sealed class Singleton
     {
         private static Singleton? singletonInstance;
+        //Lazy<T> apporach:
+        //public static readonly Lazy<Singleton> lazy = new Lazy<Singleton>(() => new Singleton());
 
         private Singleton()
         {
