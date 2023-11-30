@@ -5,7 +5,9 @@ VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Strategy Pattern First Look", "Strategy Pattern First Look.csproj", "{0CCC907A-A680-4352-ABDB-FA6F2589305C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strategy_Tests", "Strategy_Tests\Strategy_Tests.csproj", "{701B5332-EC74-4721-B63F-2929E8AD4BB3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Strategy_Tests", "Strategy_Tests\Strategy_Tests.csproj", "{701B5332-EC74-4721-B63F-2929E8AD4BB3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Behavioral", "Behavioral", "{C0306E9E-2750-4B35-9BF4-E1E42FCC84D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +26,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0CCC907A-A680-4352-ABDB-FA6F2589305C} = {C0306E9E-2750-4B35-9BF4-E1E42FCC84D0}
+		{701B5332-EC74-4721-B63F-2929E8AD4BB3} = {C0306E9E-2750-4B35-9BF4-E1E42FCC84D0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D84F6DEF-EB18-46C3-AFD9-222F05A2925D}
