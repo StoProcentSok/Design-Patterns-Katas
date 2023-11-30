@@ -6,9 +6,6 @@ namespace Strategy_Tests
     [TestFixture]
     public class WhenOrderIs
     {
-        
-        
-
         [Test]
         public void FromSwedenToSweden_AndPrice100_ThenTaxShouldBe_25()
         {
