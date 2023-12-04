@@ -1,7 +1,12 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>Factory_Pattern_First_Look</RootNamespace>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="FactoryAbstractFactory_Tests\**" />
+    <EmbeddedResource Remove="FactoryAbstractFactory_Tests\**" />
+    <None Remove="FactoryAbstractFactory_Tests\**" />
+  </ItemGroup>
 </Project>
