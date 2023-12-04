@@ -1,4 +1,4 @@
-﻿namespace Factory_Pattern_First_Look.Business.Models.Commerce
+﻿namespace Factory_Pattern.Business.Models.Commerce
 {
     public class Payment
     {

@@ -1,8 +1,8 @@
-﻿using Factory_Pattern_First_Look.Business.Models.Shipping;
+﻿using Factory_Pattern.Business.Models.Shipping;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Factory_Pattern_First_Look.Business.Models.Commerce
+namespace Factory_Pattern.Business.Models.Commerce
 {
     public class Order
     {

@@ -1,9 +1,9 @@
-﻿using Strategy_Pattern_First_Look.Business.Strategies;
-using Strategy_Pattern_First_Look.Business.Strategies.SalesTax;
+﻿using Strategy_Pattern.Business.Strategies;
+using Strategy_Pattern.Business.Strategies.SalesTax;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Strategy_Pattern_First_Look.Business.Models
+namespace Strategy_Pattern.Business.Models
 {
     public class Order
     {

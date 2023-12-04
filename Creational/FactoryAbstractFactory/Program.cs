@@ -1,8 +1,8 @@
-﻿using Factory_Pattern_First_Look.Business;
-using Factory_Pattern_First_Look.Business.Models.Commerce;
+﻿using Factory_Pattern.Business;
+using Factory_Pattern.Business.Models.Commerce;
 using System;
 
-namespace Factory_Pattern_First_Look
+namespace Factory_Pattern
 {
     class Program
     {

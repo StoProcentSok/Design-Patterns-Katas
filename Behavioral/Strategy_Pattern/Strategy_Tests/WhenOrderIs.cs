@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using Strategy_Pattern_First_Look.Business.Models;
+using Strategy_Pattern.Business.Models;
 
 namespace Strategy_Tests
 {

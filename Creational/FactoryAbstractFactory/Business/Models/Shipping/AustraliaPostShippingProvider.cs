@@ -1,7 +1,7 @@
-﻿using Factory_Pattern_First_Look.Business.Models.Commerce;
+﻿using Factory_Pattern.Business.Models.Commerce;
 using System;
 
-namespace Factory_Pattern_First_Look.Business.Models.Shipping
+namespace Factory_Pattern.Business.Models.Shipping
 {
     public class AustraliaPostShippingProvider : ShippingProvider
     {

@@ -1,6 +1,6 @@
-﻿using Strategy_Pattern_First_Look.Business.Models;
+﻿using Strategy_Pattern.Business.Models;
 
-namespace Strategy_Pattern_First_Look.Business.Strategies.SalesTax
+namespace Strategy_Pattern.Business.Strategies.SalesTax
 {
     internal class USTaxStrategy : IOrderTaxStrategy
     {

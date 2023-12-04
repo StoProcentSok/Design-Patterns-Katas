@@ -1,8 +1,8 @@
-﻿using Factory_Pattern_First_Look.Business.Models.Commerce;
-using Factory_Pattern_First_Look.Business.Models.Shipping;
+﻿using Factory_Pattern.Business.Models.Commerce;
+using Factory_Pattern.Business.Models.Shipping;
 using System;
 
-namespace Factory_Pattern_First_Look.Business
+namespace Factory_Pattern.Business
 {
     public class ShoppingCart
     {
