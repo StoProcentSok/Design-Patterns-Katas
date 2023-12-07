@@ -2,6 +2,7 @@
 using Factory_Pattern.Business;
 using Factory_Pattern.Business.Models.Commerce;
 using NUnit.Framework;
+using Factory_Pattern_First_Look.Business.Models.Shipping.Factories;
 
 namespace FactoryAbstractFactory_Tests
 {
@@ -11,28 +12,11 @@ namespace FactoryAbstractFactory_Tests
         [Test]
         public void ThenProperLableIsGeneratedForSwedishOrder()
         {
-            var order = new Order
-            {
-                Recipient = new Address
-                {
-                    To = "Filip Ekberg",
-                    Country = "Sweden"
-                },
+            var orderFactory = new SwedishOrderFactory();
+            var order = orderFactory.GetOrder();
 
-                Sender = new Address
-                {
-                    To = "Someone else",
-                    Country = "Sweden"
-                },
-
-                TotalWeight = 30,
-            };
-
-            order.LineItems.Add(new Item("CSHARP_SMORGASBORD", "C# Smorgasbord", 100m), 1);
-            order.LineItems.Add(new Item("CONSULTING", "Building a website", 100m), 1);
-
-
-            var cart = new ShoppingCart(order);
+            var shippingProviderFactory = new StandardShippingProviderFactory();
+            var cart = new ShoppingCart(order, shippingProviderFactory);
 
             var shippingLabel = cart.Finalize();
 
@@ -42,30 +26,14 @@ namespace FactoryAbstractFactory_Tests
         }
 
         [Test]
+        
         public void ThenProperLableIsGeneratedForAustralianOrder()
         {
-            var order = new Order
-            {
-                Recipient = new Address
-                {
-                    To = "Filip Ekberg",
-                    Country = "Sweden"
-                },
+            var orderFactory = new AustralianOrderFactory();
+            var order = orderFactory.GetOrder();
 
-                Sender = new Address
-                {
-                    To = "Someone else",
-                    Country = "Australia"
-                },
-
-                TotalWeight = 30,
-            };
-
-            order.LineItems.Add(new Item("CSHARP_SMORGASBORD", "C# Smorgasbord", 100m), 1);
-            order.LineItems.Add(new Item("CONSULTING", "Building a website", 100m), 1);
-
-
-            var cart = new ShoppingCart(order);
+            var shippingProviderFactory = new StandardShippingProviderFactory();
+            var cart = new ShoppingCart(order, shippingProviderFactory);
 
             var shippingLabel = cart.Finalize();
 
