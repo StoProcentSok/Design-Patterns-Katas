@@ -1,5 +1,6 @@
 ﻿using Factory_Pattern.Business;
 using Factory_Pattern.Business.Models.Commerce;
+using Factory_Pattern_First_Look.Business;
 using Factory_Pattern_First_Look.Business.Models.Shipping.Factories;
 using System;
 
@@ -40,8 +41,21 @@ namespace Factory_Pattern
             order.LineItems.Add(new Item("CONSULTING", "Building a website", 100m), 1);
             #endregion
 
-            var shippingProviderFactory = new StandardShippingProviderFactory();
-            var cart = new ShoppingCart(order, shippingProviderFactory);
+            IPurchaseProviderFactory purchaseProviderFactory;
+            if (order.Sender.Country == "Sweden")
+            {
+                purchaseProviderFactory = new SwedenPurchaseProviderFactory();
+            }
+            else if (order.Sender.Country == "Australia")
+            {
+                purchaseProviderFactory = new AustralianPurchaseProviderFactory();
+            }
+            else
+            {
+                throw new Exception("Sender country invalid");
+            }
+
+            var cart = new ShoppingCart(order, purchaseProviderFactory);
 
             var shippingLabel = cart.Finalize();
 

@@ -3,6 +3,7 @@ using Factory_Pattern.Business;
 using Factory_Pattern.Business.Models.Commerce;
 using NUnit.Framework;
 using Factory_Pattern_First_Look.Business.Models.Shipping.Factories;
+using Factory_Pattern_First_Look.Business;
 
 namespace FactoryAbstractFactory_Tests
 {
@@ -15,8 +16,8 @@ namespace FactoryAbstractFactory_Tests
             var orderFactory = new SwedishOrderFactory();
             var order = orderFactory.GetOrder();
 
-            var shippingProviderFactory = new StandardShippingProviderFactory();
-            var cart = new ShoppingCart(order, shippingProviderFactory);
+            var purchaseProviderFactory = new SwedenPurchaseProviderFactory();
+            var cart = new ShoppingCart(order, purchaseProviderFactory);
 
             var shippingLabel = cart.Finalize();
 
@@ -32,8 +33,8 @@ namespace FactoryAbstractFactory_Tests
             var orderFactory = new AustralianOrderFactory();
             var order = orderFactory.GetOrder();
 
-            var shippingProviderFactory = new StandardShippingProviderFactory();
-            var cart = new ShoppingCart(order, shippingProviderFactory);
+            var orderProviderFactory = new AustralianPurchaseProviderFactory();
+            var cart = new ShoppingCart(order, orderProviderFactory);
 
             var shippingLabel = cart.Finalize();
 
