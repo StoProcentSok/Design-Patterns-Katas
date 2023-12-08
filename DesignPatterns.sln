@@ -19,6 +19,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FactoryAbstractFactory", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryAbstractFactory_Tests", "Creational\FactoryAbstractFactory\FactoryAbstractFactory_Tests\FactoryAbstractFactory_Tests.csproj", "{517CE888-2EA1-4736-840E-684D89382F2B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Structural", "Structural", "{6FCA322F-35BF-4E4A-AC0D-9E65C6544F24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facade", "Structural\Facade\Facade.csproj", "{C133FCFD-6FAA-48A9-A7E6-D1E2375C21A3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +53,10 @@ Global
 		{517CE888-2EA1-4736-840E-684D89382F2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{517CE888-2EA1-4736-840E-684D89382F2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{517CE888-2EA1-4736-840E-684D89382F2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C133FCFD-6FAA-48A9-A7E6-D1E2375C21A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C133FCFD-6FAA-48A9-A7E6-D1E2375C21A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C133FCFD-6FAA-48A9-A7E6-D1E2375C21A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C133FCFD-6FAA-48A9-A7E6-D1E2375C21A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +68,7 @@ Global
 		{97D1087C-0C57-403F-9CC1-C748673580F4} = {176BBF8C-3BB1-4FBA-8E02-E6BC5BE6BEC3}
 		{55486CCC-AABB-4C46-9220-E4BABF82900E} = {176BBF8C-3BB1-4FBA-8E02-E6BC5BE6BEC3}
 		{517CE888-2EA1-4736-840E-684D89382F2B} = {176BBF8C-3BB1-4FBA-8E02-E6BC5BE6BEC3}
+		{C133FCFD-6FAA-48A9-A7E6-D1E2375C21A3} = {6FCA322F-35BF-4E4A-AC0D-9E65C6544F24}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D84F6DEF-EB18-46C3-AFD9-222F05A2925D}
