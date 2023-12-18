@@ -18,21 +18,25 @@ namespace Builder_Pattern
             _report = new InventoryReport();
         }
 
-        public void AddTitle()
+        public IFurnitureInventoryBuilder AddTitle()
         {
             _report.TitleSection = "------ Daily report ---------- \n\n";
+            return this;
         }
 
-        public void AddDimensions()
+        public IFurnitureInventoryBuilder AddDimensions()
         {
             _report.DimensionsSection = string.Join(Environment.NewLine, _items.Select(i =>
             $"Product: {i.Name} \n  Price: {i.Price} \n" +
             $"Height: {i.Height} x Width: {i.Width} -> Weight: {i.Weight}"));
+
+            return this;
         }
 
-        public void AddLogistics(DateTime dateTime)
+        public IFurnitureInventoryBuilder AddLogistics(DateTime dateTime)
         {
             _report.LogisticsSection = $"Report generated on {dateTime}";
+            return this;
         }
 
 
