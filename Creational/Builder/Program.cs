@@ -15,6 +15,9 @@ namespace Builder_Pattern
             };
 
             var reportBuilder = new DailyReportBuilder(items);
+            var director = new InventoryBuildDirector(reportBuilder);
+
+            director.BuildCompleteReport();
 
             var report = reportBuilder.GetDailyReport();
             Console.Write(report.Debug());
