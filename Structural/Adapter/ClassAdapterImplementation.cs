@@ -1,14 +1,19 @@
 ﻿using Adapter;
 using Adapter.ExternalSystemData;
 
-namespace ObjectAdapter
+namespace ClassAdapter
 {
-    public class CityAdapter : ICityAdapter
+    //Adapting target
+    public interface ICityAdapter
     {
-        public ExternalSystem ExternalSystem { get; private set; } = new();
+        City GetCity();
+    }
+
+    public class CityAdapter : ExternalSystem, ICityAdapter
+    {   
         public City GetCity()
         {
-            var cityFromExternalSystem = this.ExternalSystem.GetCity();
+            var cityFromExternalSystem = base.GetCity();
 
             return new City($"{cityFromExternalSystem.Name} - {cityFromExternalSystem.NickName}", cityFromExternalSystem.Inhabitants);
         }

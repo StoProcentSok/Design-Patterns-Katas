@@ -1,4 +1,5 @@
 ﻿using Adapter;
+using ObjectAdapter;
 
 Console.Title = "Adapter";
 
