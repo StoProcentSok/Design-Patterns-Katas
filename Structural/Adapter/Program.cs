@@ -1,9 +1,9 @@
 ﻿using Adapter;
-using ObjectAdapter;
+using ClassAdapter;
 
 Console.Title = "Adapter";
 
-ICityAdapter adapter = new CityAdapter();
+Adapter.ICityAdapter adapter = new CityAdapter();
 
 var city = adapter.GetCity();
 Console.WriteLine($"{city.FullName}, {city.Inhabitants}");
