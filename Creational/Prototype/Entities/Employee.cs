@@ -1,29 +1,7 @@
 ﻿using System.Text.Json;
 
-namespace Prototype
+namespace Prototype.Entities
 {
-    public abstract class Person
-    {
-        public abstract string Name { get; set; }
-
-        public abstract Person Clone(bool deepClone);
-    }
-
-    public class Manager : Person
-    {
-        public override string Name {get; set; }
-
-        public Manager(string name)
-        {
-            this.Name = name;
-        }
-
-        public override Person Clone(bool deepClone = false)
-        {
-            return (Person)MemberwiseClone();
-        }
-    }
-
     public class Employee : Person
     {
         public override string Name { get; set; }

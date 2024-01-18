@@ -1,4 +1,4 @@
-﻿using Prototype;
+﻿using Prototype.Entities;
 
 Console.Title = "Prototype";
 
